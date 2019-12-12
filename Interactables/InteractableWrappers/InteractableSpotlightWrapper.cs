@@ -1,17 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Pustalorc.Plugins.AutoTurnOff.Extensions;
 using SDG.Unturned;
 
-namespace Pustalorc.Plugins.ReduceLag
+namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
 {
     [InteractableType(typeof(InteractableSpot), "Spotlight")]
     public class InteractableSpotlightWrapper : InteractableWrapper
     {
-        public InteractableSpotlightWrapper(string name, InteractableSpot interactable) : base(name, interactable)
+        public InteractableSpotlightWrapper(string name, Interactable interactable) : base(name, interactable)
         {
         }
 

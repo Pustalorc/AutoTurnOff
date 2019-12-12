@@ -1,16 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Pustalorc.Plugins.AutoTurnOff.Extensions;
 using SDG.Unturned;
 
-namespace Pustalorc.Plugins.ReduceLag
+namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
 {
-
     [InteractableType(typeof(InteractableSafezone), "Safezone")]
     public class InteractableSafezoneWrapper : InteractableWrapper
     {
-        public InteractableSafezoneWrapper(string name, InteractableSafezone interactable) : base(name, interactable)
+        public InteractableSafezoneWrapper(string name, Interactable interactable) : base(name, interactable)
         {
         }
 
@@ -31,7 +27,6 @@ namespace Pustalorc.Plugins.ReduceLag
 
             region.barricades[index].barricade.state[0] = value.ToByte();
             EffectManager.sendEffect(8, EffectManager.SMALL, Interactable.transform.position);
-
         }
     }
 }

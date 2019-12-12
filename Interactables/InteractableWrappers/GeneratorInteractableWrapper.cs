@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Pustalorc.Plugins.AutoTurnOff.Extensions;
 using SDG.Unturned;
 
-namespace Pustalorc.Plugins.ReduceLag
+namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
 {
     [InteractableType(typeof(InteractableGenerator), "Generator")]
     public sealed class GeneratorInteractableWrapper : InteractableWrapper
@@ -31,8 +27,6 @@ namespace Pustalorc.Plugins.ReduceLag
 
             region.barricades[index].barricade.state[0] = value.ToByte();
             EffectManager.sendEffect(8, EffectManager.SMALL, Interactable.transform.position);
-
-
         }
     }
 }

@@ -1,18 +1,14 @@
-﻿using SDG.Unturned;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Pustalorc.Plugins.AutoTurnOff.Extensions;
+using SDG.Unturned;
 
-namespace Pustalorc.Plugins.ReduceLag
+namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
 {
     [InteractableType(typeof(InteractableOxygenator), "Oxygenator")]
     public sealed class InteractableOxygenatorWrapper : InteractableWrapper
     {
-        public InteractableOxygenatorWrapper(string name, InteractableOxygenator interactable) : base(name, interactable)
+        public InteractableOxygenatorWrapper(string name, Interactable interactable) : base(name,
+            interactable)
         {
-
         }
 
         public override void SetActive(bool value)

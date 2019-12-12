@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Linq;
+using Pustalorc.Plugins.AutoTurnOff.Configuration;
+using Pustalorc.Plugins.AutoTurnOff.Interactables;
 using Rocket.Core.Logging;
 using Rocket.Core.Plugins;
 using Rocket.Unturned;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
 
-namespace Pustalorc.Plugins.ReduceLag
+namespace Pustalorc.Plugins.AutoTurnOff
 {
     public class ReduceLagPlugin : RocketPlugin<ReduceLagConfiguration>
     {
@@ -42,16 +44,18 @@ namespace Pustalorc.Plugins.ReduceLag
                 foreach (var interactable in from drop in region.drops where drop != null select drop.interactable)
                 {
                     if (interactable == null ||
-                        !BarricadeManager.tryGetInfo(interactable.transform, out var x, out var y, out var plant,
-                            out var index, out _) || region.barricades[index] == null ||
-                        region.barricades[index].owner != playerId || region.barricades[index].barricade == null ||
+                        !BarricadeManager.tryGetInfo(interactable.transform, out _, out _, out _, out var index,
+                            out _) || region.barricades[index] == null || region.barricades[index].owner != playerId ||
+                        region.barricades[index].barricade == null ||
                         region.barricades[index].barricade.state == null)
                         continue;
 
                     var wrapper = InteractableWrapperHandler.GetInteractableWrapper(interactable);
 
                     if (!Configuration.Instance.Interactables.Any(c => !c.IsEnabled &&
-                     c.Name.Equals(wrapper.Name, StringComparison.InvariantCultureIgnoreCase)))
+                                                                       c.Name.Equals(wrapper.Name,
+                                                                           StringComparison
+                                                                               .InvariantCultureIgnoreCase)))
                         continue;
 
                     wrapper.SetActive(false);

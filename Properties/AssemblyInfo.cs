@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("ReduceLag")]
+[assembly: AssemblyTitle("AutoTurnOff")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Pustalorc")]
-[assembly: AssemblyProduct("ReduceLag")]
+[assembly: AssemblyProduct("AutoTurnOff")]
 [assembly: AssemblyCopyright("Copyright © Pustalorc 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

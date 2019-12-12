@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers;
 using Rocket.API;
 
-namespace Pustalorc.Plugins.ReduceLag
+namespace Pustalorc.Plugins.AutoTurnOff.Configuration
 {
     public sealed class ReduceLagConfiguration : IRocketPluginConfiguration
     {
@@ -19,22 +17,12 @@ namespace Pustalorc.Plugins.ReduceLag
 
         private List<InteractableItem> GetInteractableItems()
         {
-            List<InteractableItem> result = new List<InteractableItem>();
-            foreach(var item in typeof(InteractableWrapper).Assembly.GetTypes()
-                .Where(c => c.IsSubclassOf(typeof(InteractableWrapper)) &&
-                c.IsAbstract))
-            {
-                var attribute = item.GetCustomAttribute<InteractableTypeAttribute>();
-                if (attribute == null)
-                    continue;
-
-                result.Add(new InteractableItem()
-                {
-                    IsEnabled = true,
-                    Name = attribute.Name
-                });
-            }
-            return result;
+            return (from item in typeof(InteractableWrapper).Assembly.GetTypes()
+                    .Where(c => c.IsSubclassOf(typeof(InteractableWrapper)) && c.IsAbstract)
+                select item.GetCustomAttribute<InteractableTypeAttribute>()
+                into attribute
+                where attribute != null
+                select new InteractableItem {IsEnabled = true, Name = attribute.Name}).ToList();
         }
     }
 }

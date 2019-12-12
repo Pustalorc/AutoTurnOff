@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Pustalorc.Plugins.AutoTurnOff.Extensions;
 using SDG.Unturned;
 
-namespace Pustalorc.Plugins.ReduceLag
+namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
 {
     [InteractableType(typeof(InteractableOven), "Oven")]
     public class InteractableOvenWrapper : InteractableWrapper
     {
-        public InteractableOvenWrapper(string name, InteractableOven interactable) : base(name, interactable)
+        public InteractableOvenWrapper(string name, Interactable interactable) : base(name, interactable)
         {
-
         }
 
         public override void SetActive(bool value)
