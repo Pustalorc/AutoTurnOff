@@ -8,7 +8,7 @@ namespace Pustalorc.Plugins.ReduceLag
 {
     public static class BooleanExtensions
     {
-        public static byte ToByte(this bool source)
-            => source == false ? (byte)0 : (byte)1;
+        public static unsafe byte ToByte(this bool source)
+            => *((byte*)(&source));
     }
 }
