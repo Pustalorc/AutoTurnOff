@@ -3,6 +3,6 @@
     public static class BooleanExtensions
     {
         public static unsafe byte ToByte(this bool source)
-            => *((byte*)(&source));
+            => *(byte*) &source;
     }
 }
