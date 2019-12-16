@@ -17,12 +17,12 @@ namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
                 ThrowInvalidInteractable();
 
             if (plant == ushort.MaxValue)
-                BarricadeManager.instance.channel.send("tellToggleOven", ESteamCall.ALL, x, y,
+                BarricadeManager.instance.channel.send("tellToggleSpot", ESteamCall.ALL, x, y,
                     BarricadeManager.BARRICADE_REGIONS, ESteamPacket.UPDATE_RELIABLE_BUFFER, x, y,
                     plant,
                     index, value);
             else
-                BarricadeManager.instance.channel.send("tellToggleOven", ESteamCall.ALL,
+                BarricadeManager.instance.channel.send("tellToggleSpot", ESteamCall.ALL,
                     ESteamPacket.UPDATE_RELIABLE_BUFFER, x, y, plant, index, value);
 
             region.barricades[index].barricade.state[0] = value.ToByte();
