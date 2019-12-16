@@ -35,8 +35,7 @@ namespace Pustalorc.Plugins.AutoTurnOff.Interactables
         {
             var value = interactableTypes.FirstOrDefault(c => c.Attribute.InteractableType == interactable.GetType());
             if (value == null)
-                throw new NotImplementedException(
-                    $"Interactable type: {interactable.GetType().Name} does not have an implemented wrapper!");
+                return null;
 
             return (InteractableWrapper) Activator.CreateInstance(value.InteractableWrapperType, value.Attribute.Name,
                 interactable);

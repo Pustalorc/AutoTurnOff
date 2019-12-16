@@ -53,7 +53,7 @@ namespace Pustalorc.Plugins.AutoTurnOff
                     var wrapper = InteractableWrapperHandler.GetInteractableWrapper(interactable);
 
                     if (!Configuration.Instance.Interactables.Any(c => !c.IsEnabled &&
-                                                                       c.Name.Equals(wrapper.Name,
+                                                                       c.Name.Equals(wrapper?.Name ?? "",
                                                                            StringComparison
                                                                                .InvariantCultureIgnoreCase)))
                         continue;
