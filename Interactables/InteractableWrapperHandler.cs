@@ -14,7 +14,7 @@ namespace Pustalorc.Plugins.AutoTurnOff.Interactables
 
         public void FindInteractableTypes(Assembly assembly)
         {
-            foreach (var type in assembly.GetTypes().Where(c => !c.IsAbstract &&
+            foreach (var type in assembly.GetTypes().Where(c => c.IsSealed &&
                                                                 c.IsSubclassOf(typeof(InteractableWrapper))))
             {
                 var attribute = type.GetCustomAttribute<InteractableTypeAttribute>();

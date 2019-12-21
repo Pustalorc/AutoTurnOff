@@ -4,7 +4,7 @@ using SDG.Unturned;
 namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
 {
     [InteractableType(typeof(InteractableOven), "Oven")]
-    public class InteractableOvenWrapper : InteractableWrapper
+    public sealed class InteractableOvenWrapper : InteractableWrapper
     {
         public InteractableOvenWrapper(string name, Interactable interactable) : base(name, interactable)
         {

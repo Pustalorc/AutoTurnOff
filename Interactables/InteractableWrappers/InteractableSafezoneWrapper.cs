@@ -4,7 +4,7 @@ using SDG.Unturned;
 namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
 {
     [InteractableType(typeof(InteractableSafezone), "Safezone")]
-    public class InteractableSafezoneWrapper : InteractableWrapper
+    public sealed class InteractableSafezoneWrapper : InteractableWrapper
     {
         public InteractableSafezoneWrapper(string name, Interactable interactable) : base(name, interactable)
         {

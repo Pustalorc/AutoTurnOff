@@ -4,7 +4,7 @@ using SDG.Unturned;
 namespace Pustalorc.Plugins.AutoTurnOff.Interactables.InteractableWrappers
 {
     [InteractableType(typeof(InteractableSpot), "Spotlight")]
-    public class InteractableSpotlightWrapper : InteractableWrapper
+    public sealed class InteractableSpotlightWrapper : InteractableWrapper
     {
         public InteractableSpotlightWrapper(string name, Interactable interactable) : base(name, interactable)
         {
