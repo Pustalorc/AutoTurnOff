@@ -18,11 +18,11 @@ namespace Pustalorc.Plugins.AutoTurnOff.Configuration
         private List<InteractableItem> GetInteractableItems()
         {
             return (from item in typeof(InteractableWrapper).Assembly.GetTypes()
-                    .Where(c => c.IsSubclassOf(typeof(InteractableWrapper)) && c.IsAbstract)
+                    .Where(c => c.IsSubclassOf(typeof(InteractableWrapper)) && c.IsSealed)
                 select item.GetCustomAttribute<InteractableTypeAttribute>()
                 into attribute
                 where attribute != null
-                select new InteractableItem {IsEnabled = true, Name = attribute.Name}).ToList();
+                select new InteractableItem {KeepEnabled = false, Name = attribute.Name}).ToList();
         }
     }
 }

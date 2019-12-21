@@ -17,15 +17,15 @@ namespace Pustalorc.Plugins.AutoTurnOff
         protected override void Load()
         {
             U.Events.OnPlayerDisconnected += Disconnected;
-
-            Logger.Log("Reduce Lag by Pustalorc has been loaded!");
+            (InteractableWrapperHandler as InteractableWrapperHandler).FindInteractableTypes(Assembly);
+            Logger.Log("Auto Turn Off has been loaded!");
         }
 
         protected override void Unload()
         {
             U.Events.OnPlayerDisconnected -= Disconnected;
 
-            Logger.Log("Reduce Lag by Pustalorc has been unloaded!");
+            Logger.Log("Auto Turn Off has been unloaded!");
         }
 
         private void Disconnected(UnturnedPlayer player)
@@ -52,7 +52,7 @@ namespace Pustalorc.Plugins.AutoTurnOff
 
                     var wrapper = InteractableWrapperHandler.GetInteractableWrapper(interactable);
 
-                    if (!Configuration.Instance.Interactables.Any(c => !c.IsEnabled &&
+                    if (!Configuration.Instance.Interactables.Any(c => !c.KeepEnabled &&
                                                                        c.Name.Equals(wrapper?.Name ?? "",
                                                                            StringComparison
                                                                                .InvariantCultureIgnoreCase)))
