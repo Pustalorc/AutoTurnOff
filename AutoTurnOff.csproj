@@ -79,6 +79,7 @@
     <Compile Include="Interactables\InteractableWrappers\InteractableOxygenatorWrapper.cs" />
     <Compile Include="Interactables\InteractableWrappers\InteractableSafezoneWrapper.cs" />
     <Compile Include="Interactables\InteractableWrappers\InteractableSpotlightWrapper.cs" />
+    <Compile Include="Interactables\InteractableWrappers\InteractableStereoWrapper.cs" />
     <Compile Include="Interactables\InteractableWrappers\InteractableTypeAttribute.cs" />
     <Compile Include="Interactables\InteractableWrappers\InteractableWrapper.cs" />
     <Compile Include="Configuration\ReduceLagConfiguration.cs" />
