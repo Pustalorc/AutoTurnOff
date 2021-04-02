@@ -35,55 +35,47 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="Assembly-CSharp">
       <HintPath>lib\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Rocket.API, Version=2.6.4.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="Rocket.API">
       <HintPath>lib\Rocket.API.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Rocket.Core, Version=2.4.8.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="Rocket.Core">
       <HintPath>lib\Rocket.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Rocket.Unturned, Version=4.9.3.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="Rocket.Unturned">
       <HintPath>lib\Rocket.Unturned.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="SDG.NetTransport">
+      <HintPath>lib\SDG.NetTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="Steamworks.NET">
+      <HintPath>lib\Steamworks.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="UnityEngine">
       <HintPath>lib\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="UnityEngine.CoreModule">
       <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>lib\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\InteractableItem.cs" />
-    <Compile Include="Extensions\BooleanExtensions.cs" />
-    <Compile Include="Interactables\IInteractableWrapperHandler.cs" />
-    <Compile Include="Interactables\InteractableWrapperHandler.cs" />
-    <Compile Include="Interactables\InteractableWrappers\GeneratorInteractableWrapper.cs" />
-    <Compile Include="Interactables\InteractableWrappers\InteractableFireWrapper.cs" />
-    <Compile Include="Interactables\InteractableWrappers\InteractableOvenWrapper.cs" />
-    <Compile Include="Interactables\InteractableWrappers\InteractableOxygenatorWrapper.cs" />
-    <Compile Include="Interactables\InteractableWrappers\InteractableSafezoneWrapper.cs" />
-    <Compile Include="Interactables\InteractableWrappers\InteractableSpotlightWrapper.cs" />
-    <Compile Include="Interactables\InteractableWrappers\InteractableStereoWrapper.cs" />
-    <Compile Include="Interactables\InteractableWrappers\InteractableTypeAttribute.cs" />
-    <Compile Include="Interactables\InteractableWrappers\InteractableWrapper.cs" />
-    <Compile Include="Configuration\ReduceLagConfiguration.cs" />
-    <Compile Include="ReduceLagPlugin.cs" />
+    <Compile Include="Configuration\AutoTurnOffConfiguration.cs" />
+    <Compile Include="AutoTurnOffPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
