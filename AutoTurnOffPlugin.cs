@@ -43,28 +43,22 @@ namespace Pustalorc.Plugins.AutoTurnOff
                 switch (interactable)
                 {
                     case InteractableSafezone saf:
-                        if (saf.isPowered)
-                            BarricadeManager.toggleSafezone(model);
+                        BarricadeManager.ServerSetSafezonePowered(saf, false);
                         break;
                     case InteractableOxygenator oxy:
-                        if (oxy.isPowered)
-                            BarricadeManager.toggleOxygenator(model);
+                        BarricadeManager.ServerSetOxygenatorPowered(oxy, false);
                         break;
                     case InteractableSpot spot:
-                        if (spot.isPowered)
-                            BarricadeManager.toggleSpot(model);
+                        BarricadeManager.ServerSetSpotPowered(spot, false);
                         break;
                     case InteractableGenerator gen:
-                        if (gen.isPowered)
-                            BarricadeManager.toggleGenerator(model);
+                        BarricadeManager.ServerSetGeneratorPowered(gen, false);
                         break;
                     case InteractableFire fire:
-                        if (fire.isLit)
-                            BarricadeManager.toggleFire(model);
+                        BarricadeManager.ServerSetFireLit(fire, false);
                         break;
                     case InteractableOven oven:
-                        if (oven.isLit)
-                            BarricadeManager.toggleOven(model);
+                        BarricadeManager.ServerSetOvenLit(oven, false);
                         break;
                     case InteractableStereo stereo:
                         BarricadeManager.ServerSetStereoTrack(stereo, Guid.Empty);
@@ -72,7 +66,7 @@ namespace Pustalorc.Plugins.AutoTurnOff
                 }
             }
 
-            Logger.Log($"Turned off (or verified that they are off) {buildables.Count} barricades.");
+            Logger.Log($"Turned off {buildables.Count} barricades.");
         }
     }
 }
