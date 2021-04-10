@@ -51,18 +51,12 @@
       <HintPath>lib\Rocket.Unturned.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="SDG.NetTransport">
-      <HintPath>lib\SDG.NetTransport.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Steamworks.NET">
       <HintPath>lib\Steamworks.NET.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
       <HintPath>lib\UnityEngine.dll</HintPath>
       <Private>False</Private>
@@ -71,12 +65,9 @@
       <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>lib\UnityEngine.PhysicsModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildable.cs" />
     <Compile Include="Configuration\AutoTurnOffConfiguration.cs" />
     <Compile Include="AutoTurnOffPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
