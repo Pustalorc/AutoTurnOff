@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buildable.cs" />
     <Compile Include="Configuration\AutoTurnOffConfiguration.cs" />
     <Compile Include="AutoTurnOffPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
